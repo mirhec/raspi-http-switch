@@ -11,7 +11,7 @@ def init():
 
     # Setup pins
     print('Setup pins ... ')
-    for gpio in [8, 10, 12, 16, 18, 22, 24, 26]:
+    for gpio in [5, 7, 8, 10, 12, 16, 18, 22, 24, 26]:
         print('  -> pin %s as output' % gpio)
         GPIO.setup(gpio, GPIO.OUT)
         sleep(.1)
