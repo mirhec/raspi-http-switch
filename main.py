@@ -31,6 +31,11 @@ def switch(gpio, value):
         GPIO.output(gpio, GPIO.LOW)
     else:
         GPIO.output(gpio, GPIO.HIGH)
+    return 'ok'
+
+@app.route('/')
+def home():
+    return 'To set GPIOs use "/switch/<gpio>/<value>" where <value> is 1 or 0'
 
 if __name__ == "__main__":
     init()
