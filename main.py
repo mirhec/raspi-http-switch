@@ -27,15 +27,15 @@ app = Flask(__name__)
 
 @app.route("/switch/<gpio>/<value>")
 def switch(gpio, value):
-    if value is 1:
-        GPIO.output(gpio, GPIO.LOW)
+    if int(value) is 1:
+        GPIO.output(int(gpio), GPIO.LOW)
     else:
-        GPIO.output(gpio, GPIO.HIGH)
+        GPIO.output(int(gpio), GPIO.HIGH)
     return 'ok'
 
 @app.route('/')
 def home():
-    return 'To set GPIOs use "/switch/<gpio>/<value>" where <value> is 1 or 0'
+    return 'To set GPIOs use "/switch/gpio/value" where <value> is 1 or 0'
 
 if __name__ == "__main__":
     init()
